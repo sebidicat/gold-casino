@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090a0d">
+<title>GOLD CASINO — Virtual Edition</title>
+<style>
+:root{--bg:#090a0d;--panel:#12151c;--panel2:#191e28;--gold:#e7bd62;--gold2:#ffe5a0;--muted:#9ba3b2;--line:#2a303b;--green:#69d6a0}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -15%,#34301e 0,#11131a 38%,#090a0d 78%);color:#f5f2ea;font:15px/1.45 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial}
+button,input{font:inherit}button{cursor:pointer}.shell{max-width:1440px;margin:auto;padding:0 24px}
+header{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff12;position:sticky;top:0;background:#0b0c10eF;backdrop-filter:blur(16px);z-index:5}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:2px;color:var(--gold);font-size:21px}.brandmark{width:36px;height:36px;border:1px solid #d9b35e;border-radius:11px;display:grid;place-items:center;background:linear-gradient(145deg,#55421d,#17140d);box-shadow:0 0 25px #d6a63b20}
+.headright{display:flex;align-items:center;gap:12px}.wallet{border:1px solid #8f7136;background:#211b10;padding:9px 14px;border-radius:12px;color:var(--gold2);font-weight:800}.wallet small{display:block;color:#b6a47d;font-size:10px;letter-spacing:1.3px}
+.btn{border:1px solid #66512b;color:#f6d98d;background:linear-gradient(180deg,#3a2e18,#211a10);border-radius:10px;padding:10px 15px;font-weight:800}.btn:hover{filter:brightness(1.2)}.btn.secondary{background:#202631;border-color:#353e4d;color:#e5e9f0}.btn.ghost{background:transparent;border-color:#343b47;color:#d6dbe4}
+.layout{display:grid;grid-template-columns:218px 1fr;gap:25px;padding-top:25px}.sidebar{position:sticky;top:100px;height:max-content;background:#11141b;border:1px solid var(--line);border-radius:17px;padding:14px}.side-title{color:#7f899a;font-size:10px;font-weight:800;letter-spacing:1.6px;padding:9px 10px}.nav{display:flex;gap:11px;align-items:center;padding:11px 12px;border-radius:10px;color:#c4cad4;cursor:pointer;margin:2px 0}.nav.active,.nav:hover{background:#292315;color:var(--gold2)}.nav span:first-child{width:22px;text-align:center}
+.hero{border:1px solid #6b562d;border-radius:22px;padding:29px 32px;min-height:220px;background:radial-gradient(circle at 78% 48%,#69501f66,transparent 25%),linear-gradient(110deg,#211b11,#171923 58%,#262015);position:relative;overflow:hidden;display:flex;align-items:center}.hero:after{content:"♛";position:absolute;right:8%;top:-54px;font-size:260px;color:#f0c96912;line-height:1}.eyebrow{color:var(--gold);font-size:11px;font-weight:900;letter-spacing:2.4px}.hero h1{font-size:clamp(29px,4vw,48px);line-height:1.04;margin:10px 0 12px;max-width:570px}.hero p{color:#c0c2c8;max-width:540px;margin:0 0 19px}.hero-content{position:relative;z-index:1}
+.section-head{display:flex;align-items:end;justify-content:space-between;margin:30px 0 14px;gap:12px}.section-head h2{font-size:21px;margin:0}.section-head p{margin:3px 0 0;color:var(--muted);font-size:13px}.filters{display:flex;gap:8px;flex-wrap:wrap}.chip{padding:8px 13px;border:1px solid var(--line);border-radius:30px;background:#141821;color:#aeb6c4;font-size:12px;font-weight:700}.chip.active{background:#332817;color:var(--gold2);border-color:#806432}
+.search{width:min(280px,100%);padding:10px 13px;border:1px solid #333b49;border-radius:10px;background:#11151d;color:#fff;outline:none}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.game{border:1px solid #2c313b;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#1b202a,#11141b);transition:.2s;cursor:pointer}.game:hover{transform:translateY(-4px);border-color:#98763d;box-shadow:0 12px 30px #0007}.art{height:155px;display:grid;place-items:center;position:relative;overflow:hidden;background:var(--art)}.art:before,.art:after{content:"";position:absolute;border:1px solid #ffffff28;border-radius:50%;width:190px;height:190px}.art:after{width:130px;height:130px}.art-icon{font-size:65px;filter:drop-shadow(0 7px 9px #0009);z-index:1}.art-label{position:absolute;left:12px;top:12px;font-size:9px;font-weight:900;letter-spacing:1.2px;color:#fff;background:#0007;padding:6px 8px;border-radius:20px}.game-info{padding:13px 14px}.game-info strong{font-size:15px}.game-info small{display:block;color:#939dad;margin-top:3px}.game-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:12px;color:var(--gold);font-size:11px;font-weight:900;letter-spacing:.8px}
+.notice{margin:25px 0;padding:13px 15px;border:1px solid #343b46;background:#10141b;border-radius:12px;color:#aeb6c4;font-size:12px}
+.view{display:none}.view.active{display:block}
+.game-screen{max-width:920px;margin:26px auto;background:linear-gradient(150deg,#201a10,#10131a 55%);border:1px solid #755c2d;border-radius:22px;padding:20px;box-shadow:0 22px 70px #0008}.game-top{display:flex;justify-content:space-between;align-items:center;gap:12px}.game-top h2{margin:0;color:var(--gold2)}.machine{margin:22px auto 16px;max-width:650px;border:7px ridge #b18a42;border-radius:19px;background:radial-gradient(circle,#3c2b19,#110f0d 75%);padding:18px;box-shadow:inset 0 0 35px #000,0 0 30px #d6a63b20}.reels{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.reel{height:112px;background:linear-gradient(180deg,#fff6df,#e4d0a4);border-radius:9px;display:grid;place-items:center;font-size:clamp(29px,5vw,48px);box-shadow:inset 0 4px 10px #fff,inset 0 -7px 10px #9b7944;overflow:hidden}.reel.spin{animation:pulse .12s infinite alternate}@keyframes pulse{to{transform:translateY(3px);filter:blur(1px)}}
+.machine-title{text-align:center;color:#f1cf78;letter-spacing:2px;font-weight:900;margin:4px 0 14px}.controls{display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap}.betbox{background:#0d1016;border:1px solid #343b47;border-radius:11px;padding:8px 12px;color:#cbd1da}.betbox input{width:90px;background:transparent;border:0;color:var(--gold2);font-weight:900;outline:none}.spinbtn{border:0;border-radius:50%;width:88px;height:88px;background:radial-gradient(circle at 35% 25%,#fff0b4,#d7a43e 42%,#79501a 75%);color:#211606;font-weight:1000;font-size:17px;box-shadow:0 6px 0 #54370f,0 0 25px #e8bd5b55}.spinbtn:disabled{opacity:.45;cursor:not-allowed}.result{text-align:center;min-height:28px;color:var(--gold2);font-weight:800;margin:14px 0 2px}.paytable{max-width:650px;margin:15px auto 0;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;color:#9da6b5;font-size:11px}
+.adminbox{max-width:760px;margin:25px auto;background:#12161e;border:1px solid var(--line);border-radius:18px;padding:20px}.formrow{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}.field{padding:11px 12px;border:1px solid #343d4b;border-radius:9px;background:#0b0e14;color:#fff;min-width:0}.userrow{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid #29303a}.muted{color:var(--muted)}footer{text-align:center;padding:35px 0 45px;color:#707989;font-size:11px}
+@media(max-width:850px){.layout{grid-template-columns:1fr}.sidebar{position:static;display:flex;overflow:auto;padding:7px}.side-title{display:none}.nav{white-space:nowrap;padding:9px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding:23px}.hero:after{right:-35px}.search{width:100%}.section-head{align-items:start;flex-direction:column}}
+@media(max-width:520px){.shell{padding:0 13px}header{height:66px}.brand{font-size:16px}.wallet{padding:7px 9px;font-size:12px}.headright .btn{padding:8px}.grid{gap:10px}.art{height:125px}.game-info{padding:10px}.reel{height:76px}.game-screen{padding:12px}.machine{padding:10px}.hero{min-height:205px}.hero h1{font-size:31px}}
+</style>
+</head>
+<body>
+<header><div class="shell" style="display:flex;align-items:center;justify-content:space-between;width:100%">
+  <div class="brand"><div class="brandmark">♛</div><span>GOLD <b style="color:#fff">CASINO</b></span></div>
+  <div class="headright"><div class="wallet"><small>PORTAFOGLIO DEMO</small><span id="wallet">10.000 GC</span></div><button class="btn ghost" onclick="showAdmin()">Admin</button></div>
+</div></header>
+<div class="shell">
+<div class="layout">
+<aside class="sidebar">
+  <div class="side-title">MENU CASINÒ</div>
+  <div class="nav active" onclick="showLobby()"><span>⌂</span> Lobby</div>
+  <div class="nav" onclick="filterGames('Tutte')"><span>✦</span> Tutte le slot</div>
+  <div class="nav" onclick="filterGames('Classica')"><span>🎰</span> Classiche</div>
+  <div class="nav" onclick="filterGames('Avventura')"><span>♜</span> Avventura</div>
+  <div class="nav" onclick="filterGames('Premium')"><span>💎</span> Premium</div>
+  <div class="side-title" style="margin-top:15px">IL TUO PROFILO</div>
+  <div class="nav" onclick="showAdmin()"><span>⚙</span> Area demo admin</div>
+</aside>
+<main>
+<section id="lobby" class="view active">
+  <div class="hero"><div class="hero-content">
+    <div class="eyebrow">VIRTUAL EDITION · SOLO DIVERTIMENTO</div>
+    <h1>Il tuo mondo di<br><span style="color:var(--gold2)">slot virtuali.</span></h1>
+    <p>Entra nella lobby, scegli il tuo gioco e divertiti con GOLD COIN. Nessun deposito, nessun prelievo, nessun valore monetario.</p>
+    <button class="btn" onclick="document.getElementById('catalog').scrollIntoView({behavior:'smooth'})">SCOPRI LE SLOT　↓</button>
+  </div></div>
+  <div class="section-head"><div><h2>La lobby delle slot</h2><p>Scegli una macchina e inizia a giocare</p></div><input id="search" class="search" placeholder="⌕  Cerca una slot..." oninput="renderGames()"></div>
+  <div class="filters" id="filters">
+    <button class="chip active" onclick="filterGames('Tutte')">Tutte</button><button class="chip" onclick="filterGames('Classica')">Classiche</button><button class="chip" onclick="filterGames('Avventura')">Avventura</button><button class="chip" onclick="filterGames('Premium')">Premium</button>
+  </div>
+  <div id="catalog" class="grid" style="margin-top:16px"></div>
+  <div class="notice">ⓘ Versione dimostrativa. I GOLD COIN sono punti virtuali senza valore monetario e non possono essere acquistati, trasferiti o riscattati.</div>
+</section>
+<section id="slot" class="view">
+  <div class="game-screen">
+    <div class="game-top"><button class="btn secondary" onclick="showLobby()">← Lobby</button><h2 id="slotTitle">Golden Fruits</h2><div class="wallet" id="slotWallet">10.000 GC</div></div>
+    <div class="machine"><div class="machine-title" id="machineTitle">GOLDEN FRUITS</div><div class="reels" id="reels"></div></div>
+    <div class="controls">
+      <label class="betbox">PUNTATA　<input id="bet" type="number" min="10" max="500" step="10" value="50"> GC</label>
+      <button class="spinbtn" id="spin" onclick="spin()">SPIN</button>
+    </div>
+    <div class="result" id="result">Buona fortuna!</div>
+    <div class="paytable"><span>3 uguali: ×8</span><span>2 uguali: ×2</span><span>Jackpot demo: ×15</span></div>
+    <div class="notice" style="margin-bottom:0">Slot originale di prova con simboli e regole semplificate. I risultati sono generati casualmente nel browser e non costituiscono un gioco con premi.</div>
+  </div>
+</section>
+<section id="admin" class="view">
+  <div class="adminbox">
+    <div class="eyebrow">AREA RISERVATA · PROTOTIPO LOCALE</div><h2 style="margin:5px 0 3px">Pannello demo amministratore</h2>
+    <p class="muted" style="margin-top:0">Crea profili dimostrativi e assegna punti virtuali su questo dispositivo.</p>
+    <div class="notice">Attenzione: questa pagina è solo una demo front-end. Non usare password vere né pubblicarla come sistema sicuro: per account reali serve autenticazione e database lato server.</div>
+    <div id="adminLogin"><div class="formrow"><input class="field" id="pin" type="password" placeholder="PIN demo admin"><button class="btn" onclick="loginAdmin()">Entra</button></div><small class="muted">PIN dimostrativo: <b>2468</b> (non è una protezione reale).</small></div>
+    <div id="adminPanel" style="display:none">
+      <h3>Nuovo utente demo</h3>
+      <div class="formrow"><input class="field" id="newUser" placeholder="Nome utente"><input class="field" id="newBalance" type="number" min="0" value="1000" placeholder="Saldo iniziale GC"><button class="btn" onclick="addUser()">Crea utente</button></div>
+      <h3>Utenti creati su questo dispositivo</h3><div id="users"></div>
+    </div>
+    <button class="btn ghost" style="margin-top:18px" onclick="showLobby()">Torna alla lobby</button>
+  </div>
+</section>
+</main></div>
+<footer>GOLD CASINO · VIRTUAL EDITION · SOLO MONETA FITTIZIA · NESSUN DENARO REALE</footer>
+</div>
+<script>
+const games=[
+ {name:"Golden Fruits",cat:"Classica",emoji:"🍒",sub:"Frutta classica",art:"linear-gradient(135deg,#7a291e,#e09a37 55%,#3a1720)",symbols:["🍒","🍋","🍇","🍉","🔔","7️⃣"]},
+ {name:"Egyptian Treasures",cat:"Avventura",emoji:"𓂀",sub:"Tesori del faraone",art:"linear-gradient(135deg,#163b48,#b47a2d 55%,#211b36)",symbols:["𓂀","👑","💎","🐪","🏺","✨"]},
+ {name:"Diamond Royale",cat:"Premium",emoji:"💎",sub:"Gemme e lusso",art:"linear-gradient(135deg,#123b58,#477eb2 55%,#211c42)",symbols:["💎","👑","💍","🔔","7️⃣","✨"]},
+ {name:"Lucky Sevens",cat:"Classica",emoji:"7️⃣",sub:"La fortuna ti sorride",art:"linear-gradient(135deg,#521b26,#bd3835 55%,#301525)",symbols:["7️⃣","🍒","🍀","⭐","🔔","💰"]},
+ {name:"Wild Jungle",cat:"Avventura",emoji:"🐯",sub:"Nel cuore della giungla",art:"linear-gradient(135deg,#174a36,#8b9b35 55%,#172c2c)",symbols:["🐯","🐒","🌴","💎","🦜","👑"]},
+ {name:"Royal Palace",cat:"Premium",emoji:"👑",sub:"La sala dei reali",art:"linear-gradient(135deg,#3d2250,#bd8d42 55%,#21152c)",symbols:["👑","💎","🏆","♠️","♥️","7️⃣"]},
+ {name:"Ocean Fortune",cat:"Avventura",emoji:"🌊",sub:"Fortuna dagli abissi",art:"linear-gradient(135deg,#063d58,#168c9b 55%,#13233d)",symbols:["🐬","🐚","🌊","💎","🐠","👑"]},
+ {name:"Neon Nights",cat:"Premium",emoji:"🌟",sub:"Luci della notte",art:"linear-gradient(135deg,#35105b,#a52b8d 55%,#111a42)",symbols:["🌟","🔮","💜","7️⃣","💎","⚡"]}
+];
+let balance=Number(localStorage.getItem("gc_balance")||10000),activeGame=0,category="Tutte",users=JSON.parse(localStorage.getItem("gc_users")||"[]"),admin=false;
+function fmt(n){return Math.floor(n).toLocaleString("it-IT")+" GC"}
+function updateWallet(){document.getElementById("wallet").textContent=fmt(balance);let sw=document.getElementById("slotWallet");if(sw)sw.textContent=fmt(balance);localStorage.setItem("gc_balance",balance)}
+function renderGames(){let q=(document.getElementById("search")?.value||"").toLowerCase();let list=games.map((g,i)=>({...g,i})).filter(g=>(category==="Tutte"||g.cat===category)&&(g.name+" "+g.sub).toLowerCase().includes(q));document.getElementById("catalog").innerHTML=list.map(g=>`<article class="game" onclick="openGame(${g.i})"><div class="art" style="--art:${g.art}"><span class="art-label">${g.cat.toUpperCase()}</span><span class="art-icon">${g.emoji}</span></div><div class="game-info"><strong>${g.name}</strong><small>${g.sub}</small><div class="game-bottom"><span>GIOCA ORA</span><span>▶</span></div></div></article>`).join("")||'<p class="muted">Nessuna slot trovata.</p>'}
+function filterGames(c){category=c;document.querySelectorAll(".chip").forEach(x=>x.classList.toggle("active",x.textContent.trim()===(c==="Tutte"?"Tutte":c==="Classica"?"Classiche":c==="Avventura"?"Avventura":"Premium")));renderGames()}
+function showView(id){document.querySelectorAll(".view").forEach(v=>v.classList.remove("active"));document.getElementById(id).classList.add("active");window.scrollTo({top:0,behavior:"smooth"})}
+function showLobby(){showView("lobby")}
+function openGame(i){activeGame=i;let g=games[i];document.getElementById("slotTitle").textContent=g.name;document.getElementById("machineTitle").textContent=g.name.toUpperCase();document.getElementById("result").textContent="Buona fortuna!";drawReels(g.symbols.slice(0,5));showView("slot");updateWallet()}
+function drawReels(arr){document.getElementById("reels").innerHTML=arr.map(s=>`<div class="reel">${s}</div>`).join("")}
+function spin(){let bet=Math.floor(Number(document.getElementById("bet").value));if(!Number.isFinite(bet)||bet<10||bet>500){document.getElementById("result").textContent="Scegli una puntata tra 10 e 500 GC.";return}if(balance<bet){document.getElementById("result").textContent="Saldo demo insufficiente.";return}
+let g=games[activeGame],btn=document.getElementById("spin"),res=document.getElementById("result"),reelEls=[...document.querySelectorAll(".reel")];btn.disabled=true;reelEls.forEach(e=>e.classList.add("spin"));res.textContent="I rulli stanno girando...";
+setTimeout(()=>{let r=Array.from({length:5},()=>g.symbols[Math.floor(Math.random()*g.symbols.length)]);drawReels(r);let win=0;if(r.every(x=>x===r[0]))win=bet*15;else if(r.filter(x=>x===r[0]).length>=3||r.filter(x=>x===r[1]).length>=3)win=bet*8;else if(new Set(r).size<=4)win=bet*2;balance=balance-bet+win;updateWallet();res.textContent=win?`🎉 VINCITA DEMO: +${fmt(win)}!`:"Nessuna combinazione. Riprova!";btn.disabled=false},850)}
+function showAdmin(){showView("admin")}
+function loginAdmin(){if(document.getElementById("pin").value==="2468"){admin=true;document.getElementById("adminLogin").style.display="none";document.getElementById("adminPanel").style.display="block";renderUsers()}else alert("PIN demo non corretto")}
+function addUser(){if(!admin)return;let name=document.getElementById("newUser").value.trim(),amount=Math.max(0,Math.floor(Number(document.getElementById("newBalance").value)||0));if(!name){alert("Inserisci un nome utente");return}users.push({name,balance:amount});localStorage.setItem("gc_users",JSON.stringify(users));document.getElementById("newUser").value="";renderUsers()}
+function renderUsers(){document.getElementById("users").innerHTML=users.length?users.map((u,i)=>`<div class="userrow"><div><b>${u.name.replace(/[&<>"']/g,"")}</b><div class="muted">${fmt(u.balance)}</div></div><div style="display:flex;gap:7px;flex-wrap:wrap"><button class="btn secondary" onclick="changeUser(${i},1000)">+1.000</button><button class="btn secondary" onclick="changeUser(${i},-1000)">−1.000</button><button class="btn ghost" onclick="deleteUser(${i})">Elimina</button></div></div>`).join(""):'<p class="muted">Ancora nessun utente demo.</p>'}
+function changeUser(i,n){if(!admin)return;users[i].balance=Math.max(0,users[i].balance+n);localStorage.setItem("gc_users",JSON.stringify(users));renderUsers()}
+function deleteUser(i){if(!admin)return;users.splice(i,1);localStorage.setItem("gc_users",JSON.stringify(users));renderUsers()}
+renderGames();updateWallet();
+</script>
+</body></html>
